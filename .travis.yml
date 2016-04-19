@@ -4,8 +4,17 @@ node_js: '5'
 addons:
   postgresql: '9.4'
 before_script:
-  - bash install.sh
+- bash install.sh
 script:
-  - source env.sh && npm run test
+- source env.sh && npm run test
 notifications:
-   slack: devops-training-spb:0sxmXTlvGqiWi7AUAr9jeG12
+  slack: devops-training-spb:0sxmXTlvGqiWi7AUAr9jeG12
+deploy:
+  provider: heroku
+  api_key:
+    secure: Dfijout2+cDs6HxBca978j1GUUz5W8RvKs2luLE+zcwMu38I1sMIrwZA0LlNFicI2LLfjhZpECEh/luJKZPrxtqBkqL+gXVUMotkij3vkaaITU1V20UcS2K+6PIgRIdqB30wWcSF/atK/wl7tPXDxkNjtIOE6nAtX2LRKvaQTAwXGaJK4HwSsUZMlvsNcm4EMh1ifonqpQMa1gqYaQgP0J0RePLbJYA9YByOFlkwbrWzjc69uYm5J/s0c8q6TYnDKEvkRCrrXcPXibgD/iwR0k4YKbKbtJXOBa2itSGpftkddFDfNorGfuiL1XoxFtzkrevN/WTOnThxt9J5du//UlAhhHF8vdznfXLADebU5gqCGdv4NrOm9QtPEctyp3VS1ICVSC577K1zM4Ak/wK0QQ6dpqH2b6zMiYyTSP3PGa6gO1a7ItB/HxVCKabwk0tpfQN+ZnROXegzat3uEsyrLgnJ+Z4ixHo+cvlx86BMa2ZikavL4Nf08PBlC4y98CifwEkvENuFSVcU7VA1gde15oTEZLjCZC9gAf4KMArpqvLmG//goIoYxfbn+FQ+SnfEexNnwPTWTBMA09+smL7gsL8TzOzdcrt7AvlY6oZIzBL+Up+/VlGWqtxQnLBN8FDSfjNIDXX/RbGCjXDykwp+oXVU54nP4qIO78y0FgggtzQ=
+  app: tranquil-hamlet-36873
+  on:
+    repo: eriksemrush/delivery-pipeline-training
+  738fe4b6-ee14-4416-bbbf-3a86830a080c:
+    secure: pZZ6RcndH40gS72to/k5hUl/+lbRWj5ZWbffuOxcqUKYQjIpZC9XWjm4PoL7Bi2ICmtUFxmdnmFtM+8s3ocVXQUyFiLWAC/ujkLvn5/PW1+oqguvHXAlrdGeq/FBRdkEM+hcws643zJe2mClruXrP9h4Xhe5rkUDAV4T8FeOdfnFSEIkUg7Ak89BeeDw9B9las4/QbFfWaYIbS6ROeDlO6mhZyXlvF+AjOhYmVT08tkD5Hn/cLk6ViqEWu7DZvTDk6iTBwVY9vwuGkNcFNyKT6KtKnlBwN8Tpkd08tRvRe42qP/8/+dKCamAxWSdzGHEtW/sXAoetzl7CU4f8+vf0ly4GgNV7nvUwP4Ux419u4MAM07m7RaVKbANefbPayDkPuXOhPorhJvRklJGu7UbxFNOpUBwZCpl3aMdctgqprkZTQoDo71LHIeAiSqp/bNpqmGqrsie8eHKQhCQMN6i9WtXVObjEC62QXMCQNPbZsQQLdj9W+7UQG4x5RYYynpT+JRJmWoUv9cKstOktMWiuBEmcBDm0woZF/W4xV565eTDaTU5a/Xs+Kp/WliyPtU8hhi2/Lvr9KejxiO4eghNUmGERtF3u5Z96ZLrcqKdr89GJXBQyKf/ypofFkOGKj1bUldErw3viw7dutgCOOu83IaWeAAeaaCTLrox1L/Gr/8=
